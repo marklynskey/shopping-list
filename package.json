@@ -19,30 +19,6 @@
     "prettier:write": "prettier --write . --ignore-path './.gitignore'",
     "prepare": "husky install"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "plugins": [
-      "sort-imports-es6-autofix"
-    ],
-    "rules": {
-      "sort-imports-es6-autofix/sort-imports-es6": [
-        2,
-        {
-          "ignoreCase": false,
-          "ignoreMemberSort": false,
-          "memberSyntaxSortOrder": [
-            "none",
-            "all",
-            "multiple",
-            "single"
-          ]
-        }
-      ]
-    }
-  },
   "browserslist": {
     "production": [
       ">0.2%",
