@@ -23,7 +23,25 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "plugins": [
+      "sort-imports-es6-autofix"
+    ],
+    "rules": {
+      "sort-imports-es6-autofix/sort-imports-es6": [
+        2,
+        {
+          "ignoreCase": false,
+          "ignoreMemberSort": false,
+          "memberSyntaxSortOrder": [
+            "none",
+            "all",
+            "multiple",
+            "single"
+          ]
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -38,6 +56,7 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "husky": "^7.0.4",
     "prettier": "^2.5.1"
   }
