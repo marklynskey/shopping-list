@@ -1,5 +1,9 @@
-import { Heading } from "@chakra-ui/react";
+import HeaderNav from "./components/HeaderNav";
 
-const App = () => <Heading>Shopping list</Heading>;
+const App = () => (
+  <>
+    <HeaderNav />
+  </>
+);
 
 export default App;
