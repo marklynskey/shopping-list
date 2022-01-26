@@ -12,7 +12,8 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "prettier:check": "prettier --check . --ignore-path './.gitignore'",
-    "prettier:write": "prettier --write . --ignore-path './.gitignore'"
+    "prettier:write": "prettier --write . --ignore-path './.gitignore'",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -33,6 +34,7 @@
     ]
   },
   "devDependencies": {
+    "husky": "^7.0.4",
     "prettier": "^2.5.1"
   }
 }
