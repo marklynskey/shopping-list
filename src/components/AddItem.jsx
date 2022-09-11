@@ -6,7 +6,7 @@ import {
   Input,
   Stack,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const AddItem = ({ addItemHandler }) => {
   const [name, setName] = useState("");
@@ -18,12 +18,20 @@ const AddItem = ({ addItemHandler }) => {
   const [quantity, setQuantity] = useState("1");
   const onQuantityChange = (event) => setQuantity(event.target.value);
 
+  const resetValues = () => {
+    setName("");
+    setPrice("");
+    setQuantity("1");
+  };
+
+  const nameRef = useRef(null);
+
   return (
     <Stack spacing={2}>
       <Flex alignItems="flex-end" justifyContent="stretch" gap={2}>
         <FormControl>
           <FormLabel>Item</FormLabel>
-          <Input value={name} onChange={onNameChange} />
+          <Input value={name} onChange={onNameChange} ref={nameRef} />
         </FormControl>
         <FormControl width="50%">
           <FormLabel>Price</FormLabel>
@@ -34,7 +42,15 @@ const AddItem = ({ addItemHandler }) => {
           <Input type="number" value={quantity} onChange={onQuantityChange} />
         </FormControl>
       </Flex>
-      <Button onClick={() => addItemHandler(name, price, quantity)}>Add</Button>
+      <Button
+        onClick={() => {
+          addItemHandler(name, price, quantity);
+          resetValues();
+          nameRef.current.focus();
+        }}
+      >
+        Add
+      </Button>
     </Stack>
   );
 };
