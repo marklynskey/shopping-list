@@ -1,4 +1,4 @@
-import { Flex, Select, Text } from "@chakra-ui/react";
+import { Flex, Heading, Select } from "@chakra-ui/react";
 
 const BudgetBox = () => {
   const generateOptions = () => {
@@ -14,13 +14,12 @@ const BudgetBox = () => {
     <Flex
       justifyContent="space-between"
       alignItems="center"
-      margin={6}
       padding={6}
       border="1px"
       borderColor="gray.200"
       borderRadius="lg"
     >
-      <Text as="span">Weekly budget:</Text>
+      <Heading size="md">Weekly budget:</Heading>
       <Select w={40}>{generateOptions()}</Select>
     </Flex>
   );
