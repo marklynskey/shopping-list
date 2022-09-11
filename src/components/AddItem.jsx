@@ -44,7 +44,11 @@ const AddItem = ({ addItemHandler }) => {
       </Flex>
       <Button
         onClick={() => {
-          addItemHandler(name, price, quantity);
+          addItemHandler(
+            name,
+            parseFloat(price).toFixed(2),
+            parseInt(quantity)
+          );
           resetValues();
           nameRef.current.focus();
         }}
