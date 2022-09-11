@@ -1,6 +1,6 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
 
-const Item = ({ index, name, price, removeItemHandler }) => (
+const Item = ({ index, name, price, removeItemHandler, quantity }) => (
   <Flex
     alignItems="center"
     pt={3}
@@ -13,7 +13,8 @@ const Item = ({ index, name, price, removeItemHandler }) => (
     boxShadow="sm"
   >
     <Text flexGrow={1}>{name}</Text>
-    <Text flexGrow={1}>{price}</Text>
+    <Text flexGrow={1}>${price}</Text>
+    <Text flexGrow={1}>x{quantity}</Text>
     <Button flexBasis="auto" onClick={() => removeItemHandler(index)}>
       Remove
     </Button>

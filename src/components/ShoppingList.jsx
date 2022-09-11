@@ -6,8 +6,11 @@ import Items from "./Items";
 const ShoppingList = () => {
   const [items, setItems] = useState([]);
 
-  const addItem = (name, price) => {
-    name && price && setItems([...items, { name, price }]);
+  const addItem = (name, price, quantity) => {
+    name &&
+      price &&
+      quantity &&
+      setItems([{ name, price, quantity }, ...items]);
   };
 
   const removeItem = (indexToRemove) =>

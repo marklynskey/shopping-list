@@ -6,7 +6,12 @@ import ShoppingList from "./components/ShoppingList";
 const App = () => (
   <>
     <HeaderNav />
-    <Container p={12}>
+    <Container
+      paddingTop={12}
+      paddingBottom={12}
+      paddingLeft={6}
+      paddingRight={6}
+    >
       <BudgetBox />
       <ShoppingList />
     </Container>
