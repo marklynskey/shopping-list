@@ -1,4 +1,4 @@
-import { Heading, Stack } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import { useState } from "react";
 import AddItem from "./AddItem";
 import BudgetBox from "./BudgetBox";
@@ -33,8 +33,6 @@ const ShoppingList = () => {
       />
       <AddItem addItemHandler={addItem} />
       <Items items={items} removeItemHandler={removeItem} />
-      <Heading size="md">Total: ${total}</Heading>
-      <Heading size="md">Budget: ${budget}</Heading>
     </Stack>
   );
 };

@@ -1,4 +1,11 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
+import { DeleteIcon } from "@chakra-ui/icons";
+
+const TextCell = ({ children, width }) => (
+  <Text flexGrow={1} mr={3} overflow="hidden" width={width} whiteSpace="nowrap">
+    {children}
+  </Text>
+);
 
 const Item = ({ index, name, price, removeItemHandler, quantity }) => (
   <Flex
@@ -12,11 +19,16 @@ const Item = ({ index, name, price, removeItemHandler, quantity }) => (
     borderRadius="lg"
     boxShadow="sm"
   >
-    <Text flexGrow={1}>{name}</Text>
-    <Text flexGrow={1}>${price}</Text>
-    <Text flexGrow={1}>x{quantity}</Text>
-    <Button flexBasis="auto" onClick={() => removeItemHandler(index)}>
-      Remove
+    <TextCell width="100%">{name}</TextCell>
+    <TextCell width="50%">${price}</TextCell>
+    <TextCell width="25%">x{quantity}</TextCell>
+    <Button
+      flexBasis="auto"
+      onClick={() => removeItemHandler(index)}
+      aria-label="Remove"
+      title="Remove"
+    >
+      <DeleteIcon />
     </Button>
   </Flex>
 );
